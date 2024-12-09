@@ -112,7 +112,21 @@ Lets say you have a table called `members` and you want to fetch all the members
 response = supabase.table("members").select("*").execute()
 ```
 - .table selects the table
-- * means all
+- `*` means all
 - .execute() executes the command and returns the response
 
+## Inserting data
+
+Parameters
+- json - Required - dict,list
+	- The values to insert, pass a dict to insert a single row or a list of dicts to insert multiple rows.
+
+- count - Optional - CountMethod
+	- The property to use to get the count of rows returned.
+
+- returning - Optional - ReturnMethod
+	- either 'minimal' or 'representation', default is 'representation'
+
+- default_to_null - Optional - bool
+	- Make missing fields defaults to `null`. Otherwise, use the default value for the column. Only applies
 
